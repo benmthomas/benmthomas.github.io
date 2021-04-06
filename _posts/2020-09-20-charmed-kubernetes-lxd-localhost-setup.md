@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Charmed Kubernetes LXD Localhost Cluster Setup
-subtitle: A giude to set up a k8s cluster on a local machine using Canonical's Charmed Kubernetes, Linux Containers (LXC/LXD) and Juju
+subtitle: A giude to set up a k8s cluster on a local environment using Canonical's Charmed Kubernetes, Linux Containers (LXC/LXD) and Juju
 gh-repo: benmthomas/charmed-kubernetes-lxd-localhost-setup
 # gh-badge: [star, fork, follow]
 tags: [kubernetes, k8s, charmed kubernetes, installation, juju]
@@ -183,7 +183,7 @@ $ conjure-up
 ```
 From the command Line UI, select the `The Canonical Distribution of Kubernetes` spell and continue installation on `localhost` with default settings.
 
-> The spell will deploy charmed kubernetes using Juju application modelling tool. It allows you to deploy, configure, scale and operate your software on public and private clouds. https://juju.is/docs
+> The spell will deploy charmed kubernetes using Juju application modelling tool. It allows you to deploy, configure, scale and operate your software on public and private clouds. <https://juju.is/docs>
 
 ## Post-deployment
 ### Forward traffic to kubeapi load balancer
@@ -206,7 +206,8 @@ lxc config device show <container_name>
 ### Regenerate Subject Alternate Name (SAN) certificate
 To provide the users with access to the cluster, the Kubernetes API server needs to authenticate the certificate presented by the user request. If the cluster is running behind a load balancer or server with an external IP, the certificate needs to hold information about the external domain as well.
 
-Use juju's `extra_sans` configuration to regenerate certificate by including the additional domain. https://github.com/charmed-kubernetes/bundle/wiki/Certificate-regeneration-via-extra_sans-options
+Use juju's `extra_sans` configuration to regenerate certificate by including the additional domain. <https://github.com/charmed-kubernetes/bundle/wiki/Certificate-regeneration-via-extra_sans-options>
+
 ```console
 juju config kubeapi-load-balancer extra_sans="master.mydomain.com lb.mydomain.com"
 ```
@@ -230,7 +231,7 @@ Restart the master after updating the file:
 $ juju run-action kubernetes-master/0 restart
 ```
 #### Create user roles
-https://kubernetes.io/docs/reference/access-authn-authz/rbac/#kubectl-create-role
+<https://kubernetes.io/docs/reference/access-authn-authz/rbac/#kubectl-create-role>
 ```console
 kubectl create role <role-name> [options]
 ```
@@ -239,7 +240,7 @@ Example:
 $ kubectl create role pod-deployment-reader --verb=get --verb=list --verb=watch --resource=pods --resource=deployment
 ```
 #### Create user rolebinding
-https://kubernetes.io/docs/reference/access-authn-authz/rbac/#kubectl-create-rolebinding
+<https://kubernetes.io/docs/reference/access-authn-authz/rbac/#kubectl-create-rolebinding>
 ```console
 kubectl create rolebinding <role-binding-name> [options]
 ```
@@ -248,7 +249,7 @@ Example:
 $ kubectl create rolebinding pod-reader-deployment-binding --role=pod-deployment-reader --user=bob --namespace=development
 ```
 ## Scale deployment
-Information on cluster scaling is available in the official documentation: https://ubuntu.com/kubernetes/docs/scaling
+Information on cluster scaling is available in the official documentation: <https://ubuntu.com/kubernetes/docs/scaling>
 ## Tear down deployment
 Run the below juju command to list the controller and the model associated with it:
 ```console
