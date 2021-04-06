@@ -30,13 +30,16 @@ $ sudo snap install conjure-up --classic
 ```
 ### Install and initialise LXD
 > Canonical recommends snap installation of lxd. Run `dpkg -s lxd |  grep Status` to check for any apt lxd installation. If it is present, then remove it by running `sudo apt purge liblxc1 lxcfs lxd lxd-client`.
+
 ```
 $ sudo snap install lxd
 ```
+
 Create `default` lxc storage pool:
 ```
 $ lxc storage create default dir
 ```
+
 Add the new lxc storage pool to `default` lxc profile:
 ```
 $ lxc profile device add default root disk path=/ pool=default
