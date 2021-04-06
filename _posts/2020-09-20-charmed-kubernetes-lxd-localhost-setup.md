@@ -4,7 +4,7 @@ title: Charmed Kubernetes LXD Localhost Cluster Setup
 subtitle: A giude to set up a k8s cluster on a local environment using Canonical's Charmed Kubernetes, Linux Containers (LXC/LXD) and Juju
 gh-repo: benmthomas/charmed-kubernetes-lxd-localhost-setup
 # gh-badge: [star, fork, follow]
-tags: [kubernetes, k8s, charmed kubernetes, installation, juju]
+tags: [kubernetes, k8s, charmed kubernetes, installation, juju, conjure-up, canonical]
 comments: true
 ---
 ## Pre-requisites
