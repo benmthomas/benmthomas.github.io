@@ -30,6 +30,7 @@ $ sudo snap install conjure-up --classic
 ```
 ### Install and initialise LXD
 > Canonical recommends snap installation of lxd. Run `dpkg -s lxd |  grep Status` to check for any apt lxd installation. If it is present, then remove it by running `sudo apt purge liblxc1 lxcfs lxd lxd-client`.
+
 ```console
 $ sudo snap install lxd
 ```
